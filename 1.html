@@ -1863,91 +1863,40 @@ function openOrder() {
 
 async function submitOrder() {
 
-
     const name =
-        document
-            .getElementById("name")
-            .value
-            .trim();
-
+        document.getElementById("name").value.trim();
 
     const phone =
-        document
-            .getElementById("phone")
-            .value
-            .trim();
-
+        document.getElementById("phone").value.trim();
 
     const description =
-        document
-            .getElementById("message")
-            .value
-            .trim();
-
-
-
-    /* بررسی نام */
+        document.getElementById("message").value.trim();
 
     if (name === "") {
-
-        alert(
-            "لطفاً نام و نام خانوادگی را وارد کنید."
-        );
-
+        alert("لطفاً نام و نام خانوادگی را وارد کنید.");
         return;
-
     }
-
-
-
-    /* بررسی موبایل */
 
     if (phone === "") {
-
-        alert(
-            "لطفاً شماره موبایل را وارد کنید."
-        );
-
+        alert("لطفاً شماره موبایل را وارد کنید.");
         return;
-
     }
 
-
-
-    /* بررسی محصول */
-
-    if (
-        !selectedProduct ||
-        !selectedProduct.title
-    ) {
-
-        alert(
-            "لطفاً ابتدا یک محصول انتخاب کنید."
-        );
-
+    if (!selectedProduct || !selectedProduct.title) {
+        alert("لطفاً ابتدا یک محصول انتخاب کنید.");
         return;
-
     }
 
+    const SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbxqdaA0xQaPw9wGRodR41dzvy9RXdQ9mDjwBWj7__BwLgqAHuHVVij6dCKfrwB_LFkl/exec";
 
-
-    /* شماره سفارش */
 
     const orderId =
-        "CT-" +
-        Date.now();
-
-
-
-    /* زمان */
+        "CT-" + Date.now();
 
     const time =
-        new Date()
-            .toLocaleString("fa-IR");
+        new Date().toLocaleString("fa-IR");
 
-
-
-    /* اطلاعات کامل سفارش */
 
     const orderData = {
 
@@ -1961,44 +1910,73 @@ async function submitOrder() {
 
         orderType: "VPN",
 
-        product:
-            selectedProduct.title,
+        product: selectedProduct.title,
 
-        volume:
-            selectedProduct.volume,
+        volume: selectedProduct.volume,
 
-        price:
-            selectedProduct.price,
+        price: selectedProduct.price,
 
-        description:
-            description,
+        description: description,
 
         time: time
-
     };
 
 
+    try {
 
-    /*
-       فعلاً اطلاعات سفارش
-       فقط در Console ذخیره می‌شود.
+        const response = await fetch(SCRIPT_URL, {
 
-       مرحله بعد همین orderData
-       را به Google Apps Script
-       می‌فرستیم.
-    */
+            method: "POST",
 
-    console.log(
-        "ORDER DATA:",
-        orderData
-    );
+            headers: {
+                "Content-Type":
+                    "text/plain;charset=utf-8"
+            },
 
+            body: JSON.stringify(orderData)
+        });
 
 
-    /* نمایش موفقیت */
+        const result =
+            await response.json();
 
-    showPage("success");
 
+        console.log(
+            "SERVER RESPONSE:",
+            result
+        );
+
+
+        if (result.success === true) {
+
+            document.getElementById("name").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("message").value = "";
+
+            showPage("success");
+
+        } else {
+
+            alert(
+                "❌ ارسال سفارش انجام نشد.\n\n" +
+                "خطا: " +
+                (result.error || "خطای نامشخص")
+            );
+        }
+
+
+    } catch (error) {
+
+        console.error(
+            "ORDER ERROR:",
+            error
+        );
+
+        alert(
+            "❌ ارتباط با سرور برقرار نشد.\n\n" +
+            "لطفاً اتصال اینترنت را بررسی کنید."
+        );
+    }
 }
 
 

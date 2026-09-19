@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>فروشگاه کرفت تیبل</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Tahoma, Arial, sans-serif;
+        }
+
+
+        body {
+            background: #0f172a;
+            color: white;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            height: 70px;
+            background: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 35px;
+            border-bottom: 1px solid #263244;
+        }
+
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+
+        /* =========================
+           LAYOUT
+        ========================= */
+
+        .layout {
+            display: flex;
+            min-height: calc(100vh - 70px);
+        }
+
+
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar {
+            width: 240px;
+            flex-shrink: 0;
+            background: #111827;
+            border-left: 1px solid #263244;
+            padding: 25px 15px;
+        }
+
+
+        .sidebar h3 {
+            color: #64748b;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+
+        .menu {
+            list-style: none;
+        }
+
+
+        .menu li {
+            margin-bottom: 8px;
+        }
+
+
+        .menu button {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: #cbd5e1;
+            text-align: right;
+            padding: 13px 15px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.25s;
+        }
+
+
+        .menu button:hover {
+            background: #1e293b;
+            color: #38bdf8;
+        }
+
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .content {
+            flex: 1;
+            padding: 35px;
+            min-width: 0;
+        }
+
+
+        .page {
+            display: none;
+        }
+
+
+        .page.active {
+            display: block;
+            animation: showPage 0.3s ease;
+        }
+
+
+        @keyframes showPage {
+
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        .title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+
+        .subtitle {
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 20px;
+        }
+
+
+        .card {
+            background: #172033;
+            border: 1px solid #263244;
+            border-radius: 15px;
+            padding: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.25);
+        }
+
+
+        .icon {
+            width: 55px;
+            height: 55px;
+            background: #0c4a6e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 13px;
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+
+        .card p {
+            color: #94a3b8;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+
+        .price {
+            color: #38bdf8;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+
+        /* =========================
+           DETAIL
+        ========================= */
+
+        .detail-box {
+            max-width: 850px;
+            background: #172033;
+            border: 1px solid #263244;
+            border-radius: 18px;
+            padding: 35px;
+        }
+
+
+        .detail-box h1 {
+            margin-bottom: 15px;
+        }
+
+
+        .detail-box p {
+            color: #cbd5e1;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+
+
+        .features {
+            margin: 20px 0;
+            list-style: none;
+        }
+
+
+        .features li {
+            background: #111827;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            color: #cbd5e1;
+        }
+
+
+        .features li::before {
+            content: "✓ ";
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+
+        .btn {
+            border: none;
+            padding: 13px 25px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.25s;
+        }
+
+
+        .buy {
+            background: #0284c7;
+            color: white;
+        }
+
+
+        .buy:hover {
+            background: #0369a1;
+        }
+
+
+        .back {
+            background: #334155;
+            color: white;
+        }
+
+
+        .back:hover {
+            background: #475569;
+        }
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .order-form {
+            max-width: 650px;
+            background: #172033;
+            border: 1px solid #263244;
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #cbd5e1;
+        }
+
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+
+            width: 100%;
+
+            background: #0f172a;
+
+            border: 1px solid #334155;
+
+            color: white;
+
+            padding: 13px;
+
+            border-radius: 8px;
+
+            outline: none;
+
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+
+            border-color: #38bdf8;
+
+        }
+
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+
+        /* =========================
+           SUCCESS
+        ========================= */
+
+        .success-box {
+
+            min-height: 500px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+        }
+
+
+        .success-check {
+
+            width: 130px;
+
+            height: 130px;
+
+            border-radius: 50%;
+
+            background: #22c55e;
+
+            color: white;
+
+            font-size: 85px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin-bottom: 30px;
+
+            box-shadow:
+                0 0 40px rgba(34,197,94,0.35);
+
+            animation:
+                successAnimation 0.5s ease;
+
+        }
+
+
+        .success-box h1 {
+
+            font-size: 30px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .success-box p {
+
+            color: #94a3b8;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        @keyframes successAnimation {
+
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            70% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width: 800px) {
+
+            .sidebar {
+                display: none;
+            }
+
+
+            .content {
+                padding: 20px;
+            }
+
+
+            header {
+                padding: 0 20px;
+            }
+
+
+            .title {
+                font-size: 23px;
+            }
+
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+
+            .detail-box {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="logo">
+        فروشگاه کرفت تیبل
+    </div>
+
+</header>
+
+
+
+<div class="layout">
+
+
+<!-- =========================
+     SIDEBAR
+========================= -->
+
+<aside class="sidebar">
+
+    <h3>
+        منوی اصلی
+    </h3>
+
+
+    <ul class="menu">
+
+        <li>
+
+            <button onclick="showPage('home')">
+
+                🏠 داشبورد
+
+            </button>
+
+        </li>
+
+
+        <li>
+
+            <button onclick="showPage('products')">
+
+                🛒 محصولات
+
+            </button>
+
+        </li>
+
+
+        <li>
+
+            <button onclick="showPage('orders')">
+
+                📦 سفارش‌های من
+
+            </button>
+
+        </li>
+
+    </ul>
+
+</aside>
+
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<main class="content">
+
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section id="home" class="page active">
+
+
+    <h1 class="title">
+        پنل فروش
+    </h1>
+
+
+    <p class="subtitle">
+        سرویس مورد نظر خود را انتخاب کنید
+    </p>
+
+
+
+    <div class="cards">
+
+
+        <!-- 10G -->
+
+        <div
+            class="card"
+            onclick="openProduct('vpn10')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 10G تانل شده
+            </h2>
+
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
+
+            <div class="price">
+                100 تومان
+            </div>
+
+        </div>
+
+
+
+        <!-- 20G -->
+
+        <div
+            class="card"
+            onclick="openProduct('vpn20')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 20G تانل شده
+            </h2>
+
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
+
+            <div class="price">
+                150 تومان
+            </div>
+
+        </div>
+
+
+
+        <!-- 30G -->
+
+        <div
+            class="card"
+            onclick="openProduct('vpn30')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 30G تانل شده
+            </h2>
+
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
+
+            <div class="price">
+                200 تومان
+            </div>
+
+        </div>
+
+
+
+        <!-- 40G -->
+
+        <div
+            class="card"
+            onclick="openProduct('vpn40')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 40G تانل شده
+            </h2>
+
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
+
+            <div class="price">
+                250 تومان
+            </div>
+
+        </div>
+
+
+
+        <!-- 50G -->
+
+        <div
+            class="card"
+            onclick="openProduct('vpn50')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 50G تانل شده
+            </h2>
+
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
+
+            <div class="price">
+                300 تومان
+            </div>
+
+        </div>
+
+
+
+        <!-- 80G -->
+
+        <div
+            class="card"
+            onclick="openProduct('vpn80')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 80G تانل شده
+            </h2>
+
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
+
+            <div class="price">
+                350 تومان
+            </div>
+
+        </div>
+
+
+
+        <!-- 100G -->
+
+        <div
+            class="card"
+            onclick="openProduct('vpn100')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 100G تانل شده
+            </h2>
+
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
+
+            <div class="price">
+                450 تومان
+            </div>
+
+        </div>
+
+
+
+        <!-- 150G -->
+
+        <div
+            class="card"
+            onclick="openProduct('vpn150')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 150G تانل شده
+            </h2>
+
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
+
+            <div class="price">
+                650 تومان
+            </div>
+
+        </div>
+
+
+
+        <!-- 200G -->
+
+        <div
+            class="card"
+            onclick="openProduct('vpn200')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 200G تانل شده
+            </h2>
+
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
+
+            <div class="price">
+                850 تومان
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section id="products" class="page">
+
+
+    <h1 class="title">
+        محصولات
+    </h1>
+
+
+    <p class="subtitle">
+        یکی از سرویس‌ها را انتخاب کنید
+    </p>
+
+
+    <div class="cards">
+
+
+        <div
+            class="card"
+            onclick="openProduct('vpn10')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 10G تانل شده
+            </h2>
+
+            <p>
+                حجم 10 گیگابایت
+            </p>
+
+            <div class="price">
+                100 تومان
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="card"
+            onclick="openProduct('vpn20')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 20G تانل شده
+            </h2>
+
+            <p>
+                حجم 20 گیگابایت
+            </p>
+
+            <div class="price">
+                150 تومان
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="card"
+            onclick="openProduct('vpn30')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 30G تانل شده
+            </h2>
+
+            <p>
+                حجم 30 گیگابایت
+            </p>
+
+            <div class="price">
+                200 تومان
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="card"
+            onclick="openProduct('vpn40')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 40G تانل شده
+            </h2>
+
+            <p>
+                حجم 40 گیگابایت
+            </p>
+
+            <div class="price">
+                250 تومان
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="card"
+            onclick="openProduct('vpn50')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 50G تانل شده
+            </h2>
+
+            <p>
+                حجم 50 گیگابایت
+            </p>
+
+            <div class="price">
+                300 تومان
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="card"
+            onclick="openProduct('vpn80')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 80G تانل شده
+            </h2>
+
+            <p>
+                حجم 80 گیگابایت
+            </p>
+
+            <div class="price">
+                350 تومان
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="card"
+            onclick="openProduct('vpn100')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 100G تانل شده
+            </h2>
+
+            <p>
+                حجم 100 گیگابایت
+            </p>
+
+            <div class="price">
+                450 تومان
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="card"
+            onclick="openProduct('vpn150')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 150G تانل شده
+            </h2>
+
+            <p>
+                حجم 150 گیگابایت
+            </p>
+
+            <div class="price">
+                650 تومان
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="card"
+            onclick="openProduct('vpn200')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 200G تانل شده
+            </h2>
+
+            <p>
+                حجم 200 گیگابایت
+            </p>
+
+            <div class="price">
+                850 تومان
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     DETAIL
+========================= -->
+
+<section id="detail" class="page">
+
+
+    <div class="detail-box">
+
+
+        <h1 id="productTitle">
+            عنوان محصول
+        </h1>
+
+
+        <p id="productDescription">
+            توضیحات محصول
+        </p>
+
+
+        <h3>
+            امکانات:
+        </h3>
+
+
+        <ul
+            class="features"
+            id="productFeatures"
+        ></ul>
+
+
+        <div
+            class="price"
+            id="productPrice"
+        >
+            قیمت
+        </div>
+
+
+        <div class="buttons">
+
+
+            <button
+                class="btn buy"
+                onclick="openOrder()"
+            >
+                🛒 خرید و ثبت سفارش
+            </button>
+
+
+            <button
+                class="btn back"
+                onclick="showPage('home')"
+            >
+                ← بازگشت
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ORDER
+========================= -->
+
+<section id="order" class="page">
+
+
+    <h1 class="title">
+        ثبت سفارش
+    </h1>
+
+
+    <p class="subtitle">
+        اطلاعات خود را وارد کنید
+    </p>
+
+
+    <div class="order-form">
+
+
+        <div class="form-group">
+
+            <label>
+                محصول انتخاب شده
+            </label>
+
+            <input
+                type="text"
+                id="orderProduct"
+                readonly
+            >
+
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label>
+                نام و نام خانوادگی
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="نام خود را وارد کنید"
+            >
+
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label>
+                شماره موبایل
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="09xxxxxxxxx"
+            >
+
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label>
+                توضیحات سفارش
+            </label>
+
+            <textarea
+                id="message"
+                placeholder="اگر توضیحی دارید بنویسید..."
+            ></textarea>
+
+        </div>
+
+
+
+        <div class="buttons">
+
+
+            <button
+                class="btn buy"
+                onclick="submitOrder()"
+            >
+                ثبت سفارش
+            </button>
+
+
+            <button
+                class="btn back"
+                onclick="showPage('detail')"
+            >
+                بازگشت
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ORDERS
+========================= -->
+
+<section id="orders" class="page">
+
+
+    <h1 class="title">
+        سفارش‌های من
+    </h1>
+
+
+    <p class="subtitle">
+        در حال حاضر سفارشی ثبت نشده است.
+    </p>
+
+
+</section>
+
+
+
+<!-- =========================
+     SUPPORT
+========================= -->
+
+<section id="support" class="page">
+
+
+    <h1 class="title">
+        پشتیبانی
+    </h1>
+
+
+    <p class="subtitle">
+        برای دریافت پشتیبانی با ما در ارتباط باشید.
+    </p>
+
+
+    <div class="detail-box">
+
+
+        <p>
+            در صورت وجود هرگونه مشکل یا سوال،
+            می‌توانید با پشتیبانی تماس بگیرید.
+        </p>
+
+
+        <button class="btn buy">
+            💬 ارتباط با پشتیبانی
+        </button>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about" class="page">
+
+
+    <h1 class="title">
+        درباره ما
+    </h1>
+
+
+    <div class="detail-box">
+
+
+        <p>
+            به فروشگاه ما خوش آمدید.
+            این پنل برای ارائه و فروش سرویس‌های
+            مختلف طراحی شده است.
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     SUCCESS
+========================= -->
+
+<section id="success" class="page">
+
+
+    <div class="success-box">
+
+
+        <div class="success-check">
+            ✓
+        </div>
+
+
+        <h1>
+            سفارش با موفقیت ثبت شد
+        </h1>
+
+
+        <p>
+            سفارش شما با موفقیت ثبت گردید.
+        </p>
+
+
+        <button
+            class="btn buy"
+            onclick="showPage('home')"
+        >
+            بازگشت به پنل
+        </button>
+
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+</div>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+/* =========================================
+   محصول انتخاب شده
+========================================= */
+
+let selectedProduct = {
+
+    id: "",
+
+    title: "",
+
+    volume: "",
+
+    price: ""
+
+};
+
+
+
+/* =========================================
+   لیست محصولات
+========================================= */
+
+const products = {
+
+
+    vpn10: {
+
+        title: "VPN 10G تانل شده",
+
+        volume: "10 گیگابایت",
+
+        description:
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
+
+        price: "100 تومان",
+
+        features: [
+
+            "حجم 10 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
+
+        ]
+
+    },
+
+
+    vpn20: {
+
+        title: "VPN 20G تانل شده",
+
+        volume: "20 گیگابایت",
+
+        description:
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
+
+        price: "150 تومان",
+
+        features: [
+
+            "حجم 20 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
+
+        ]
+
+    },
+
+
+    vpn30: {
+
+        title: "VPN 30G تانل شده",
+
+        volume: "30 گیگابایت",
+
+        description:
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
+
+        price: "200 تومان",
+
+        features: [
+
+            "حجم 30 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
+
+        ]
+
+    },
+
+
+    vpn40: {
+
+        title: "VPN 40G تانل شده",
+
+        volume: "40 گیگابایت",
+
+        description:
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
+
+        price: "250 تومان",
+
+        features: [
+
+            "حجم 40 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
+
+        ]
+
+    },
+
+
+    vpn50: {
+
+        title: "VPN 50G تانل شده",
+
+        volume: "50 گیگابایت",
+
+        description:
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
+
+        price: "300 تومان",
+
+        features: [
+
+            "حجم 50 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
+
+        ]
+
+    },
+
+
+    vpn80: {
+
+        title: "VPN 80G تانل شده",
+
+        volume: "80 گیگابایت",
+
+        description:
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
+
+        price: "350 تومان",
+
+        features: [
+
+            "حجم 80 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
+
+        ]
+
+    },
+
+
+    vpn100: {
+
+        title: "VPN 100G تانل شده",
+
+        volume: "100 گیگابایت",
+
+        description:
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
+
+        price: "450 تومان",
+
+        features: [
+
+            "حجم 100 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
+
+        ]
+
+    },
+
+
+    vpn150: {
+
+        title: "VPN 150G تانل شده",
+
+        volume: "150 گیگابایت",
+
+        description:
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
+
+        price: "650 تومان",
+
+        features: [
+
+            "حجم 150 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
+
+        ]
+
+    },
+
+
+    vpn200: {
+
+        title: "VPN 200G تانل شده",
+
+        volume: "200 گیگابایت",
+
+        description:
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
+
+        price: "850 تومان",
+
+        features: [
+
+            "حجم 200 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
+
+        ]
+
+    }
+
+};
+
+
+
+/* =========================================
+   تغییر صفحه
+========================================= */
+
+function showPage(page) {
+
+
+    const pages =
+        document.querySelectorAll(".page");
+
+
+    pages.forEach(function(p) {
+
+        p.classList.remove("active");
+
+    });
+
+
+    const target =
+        document.getElementById(page);
+
+
+    if (!target) {
+
+        console.error(
+            "صفحه پیدا نشد:",
+            page
+        );
+
+        return;
+
+    }
+
+
+    target.classList.add("active");
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+
+/* =========================================
+   باز کردن محصول
+========================================= */
+
+function openProduct(id) {
+
+
+    const product =
+        products[id];
+
+
+    if (!product) {
+
+        alert(
+            "محصول مورد نظر پیدا نشد."
+        );
+
+        console.error(
+            "Product not found:",
+            id
+        );
+
+        return;
+
+    }
+
+
+    selectedProduct = {
+
+        id: id,
+
+        title: product.title,
+
+        volume: product.volume,
+
+        price: product.price
+
+    };
+
+
+    document
+        .getElementById("productTitle")
+        .innerText =
+        product.title;
+
+
+    document
+        .getElementById("productDescription")
+        .innerText =
+        product.description;
+
+
+    document
+        .getElementById("productPrice")
+        .innerText =
+        product.price;
+
+
+    const featureList =
+        document.getElementById(
+            "productFeatures"
+        );
+
+
+    featureList.innerHTML = "";
+
+
+    product.features.forEach(
+        function(feature) {
+
+
+            const li =
+                document.createElement(
+                    "li"
+                );
+
+
+            li.innerText =
+                feature;
+
+
+            featureList.appendChild(
+                li
+            );
+
+        }
+    );
+
+
+    showPage("detail");
+
+}
+
+
+
+/* =========================================
+   باز کردن فرم سفارش
+========================================= */
+
+function openOrder() {
+
+
+    if (
+        !selectedProduct ||
+        !selectedProduct.title
+    ) {
+
+        alert(
+            "لطفاً ابتدا یک محصول انتخاب کنید."
+        );
+
+        return;
+
+    }
+
+
+    document
+        .getElementById("orderProduct")
+        .value =
+        selectedProduct.title;
+
+
+    showPage("order");
+
+}
+
+
+
+/* =========================================
+   ثبت سفارش
+========================================= */
+
+async function submitOrder() {
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    const description =
+        document.getElementById("message").value.trim();
+
+    if (name === "") {
+        alert("لطفاً نام و نام خانوادگی را وارد کنید.");
+        return;
+    }
+
+    if (phone === "") {
+        alert("لطفاً شماره موبایل را وارد کنید.");
+        return;
+    }
+
+    if (!selectedProduct || !selectedProduct.title) {
+        alert("لطفاً ابتدا یک محصول انتخاب کنید.");
+        return;
+    }
+
+    const SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbxqdaA0xQaPw9wGRodR41dzvy9RXdQ9mDjwBWj7__BwLgqAHuHVVij6dCKfrwB_LFkl/exec";
+
+
+    const orderId =
+        "CT-" + Date.now();
+
+    const time =
+        new Date().toLocaleString("fa-IR");
+
+
+    const orderData = {
+
+        orderId: orderId,
+
+        name: name,
+
+        phone: phone,
+
+        username: "ثبت نشده",
+
+        orderType: "VPN",
+
+        product: selectedProduct.title,
+
+        volume: selectedProduct.volume,
+
+        price: selectedProduct.price,
+
+        description: description,
+
+        time: time
+    };
+
+
+    try {
+
+        const response = await fetch(SCRIPT_URL, {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type":
+                    "text/plain;charset=utf-8"
+            },
+
+            body: JSON.stringify(orderData)
+        });
+
+
+        const result =
+            await response.json();
+
+
+        console.log(
+            "SERVER RESPONSE:",
+            result
+        );
+
+
+        if (result.success === true) {
+
+            document.getElementById("name").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("message").value = "";
+
+            showPage("success");
+
+        } else {
+
+            alert(
+                "❌ ارسال سفارش انجام نشد.\n\n" +
+                "خطا: " +
+                (result.error || "خطای نامشخص")
+            );
+        }
+
+
+    } catch (error) {
+
+        console.error(
+            "ORDER ERROR:",
+            error
+        );
+
+        alert(
+            "❌ ارتباط با سرور برقرار نشد.\n\n" +
+            "لطفاً اتصال اینترنت را بررسی کنید."
+        );
+    }
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -634,13 +634,15 @@
             </div>
 
             <h2>
-                چمن ها 
+                VPN 10G تانل شده
             </h2>
 
-        
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
 
             <div class="price">
-                برای ثبت کلیک کنید
+                100 تومان
             </div>
 
         </div>
@@ -659,13 +661,15 @@
             </div>
 
             <h2>
-                پسته ها
+                VPN 20G تانل شده
             </h2>
 
-        
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
 
             <div class="price">
-                برای ثبت کلیک کنید
+                150 تومان
             </div>
 
         </div>
@@ -684,13 +688,15 @@
             </div>
 
             <h2>
-               انگور ها 
+                VPN 30G تانل شده
             </h2>
 
-        
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
 
             <div class="price">
-                 برای ثبت کلیک کنید
+                200 تومان
             </div>
 
         </div>
@@ -709,13 +715,15 @@
             </div>
 
             <h2>
-                انار ها 
+                VPN 40G تانل شده
             </h2>
 
-          
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
 
             <div class="price">
-                 برای ثبت کلیک کنید
+                250 تومان
             </div>
 
         </div>
@@ -734,12 +742,15 @@
             </div>
 
             <h2>
-                پر کردن اب استخر
+                VPN 50G تانل شده
             </h2>
 
-         
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
+
             <div class="price">
-                 برای ثبت کلیک کنید
+                300 تومان
             </div>
 
         </div>
@@ -758,13 +769,15 @@
             </div>
 
             <h2>
-                گل ها
+                VPN 80G تانل شده
             </h2>
 
-        
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
 
             <div class="price">
-                 برای ثبت کلیک کنید
+                350 تومان
             </div>
 
         </div>
@@ -783,17 +796,72 @@
             </div>
 
             <h2>
-                گل های بیرون باغ
+                VPN 100G تانل شده
             </h2>
 
-    
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
 
             <div class="price">
-                برای ثبت کلیک کنید
+                450 تومان
             </div>
 
         </div>
 
+
+
+        <!-- 150G -->
+
+        <div
+            class="card"
+            onclick="openProduct('vpn150')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 150G تانل شده
+            </h2>
+
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
+
+            <div class="price">
+                650 تومان
+            </div>
+
+        </div>
+
+
+
+        <!-- 200G -->
+
+        <div
+            class="card"
+            onclick="openProduct('vpn200')"
+        >
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                VPN 200G تانل شده
+            </h2>
+
+            <p>
+                اتصال سریع و پایدار برای استفاده روزمره
+            </p>
+
+            <div class="price">
+                850 تومان
+            </div>
+
+        </div>
 
 
     </div>
@@ -1094,11 +1162,11 @@
         <div class="buttons">
 
 
-            <button
+                    <button
                 class="btn buy"
-                onclick="openOrder()"
+                onclick="openOrderIntro()"
             >
-                ثبت آبیاری
+                🛒 خرید و ثبت سفارش
             </button>
 
 
@@ -1117,7 +1185,56 @@
 
 </section>
 
+<!-- =========================
+     ORDER INTRO
+========================= -->
 
+<section id="orderIntro" class="page">
+
+    <div class="success-box">
+
+        <!-- عکس خودت را اینجا قرار بده -->
+        <img
+            src="1789919306386.png"
+            alt="لطفا قبل از ورود به صفحات بعدی مبلغ تایین شده ی حجم مورد نظر خود را به شماره کارت زیر واریز فرمایید و تصویر رسید را بار گذاری کنید
+            6219861438455650
+            رضا دارینی "
+            style="
+                max-width:100%;
+                width:500px;
+                border-radius:15px;
+                margin-bottom:25px;
+            "
+        >
+
+        <!-- متن خودت را اینجا بنویس -->
+        <h2>
+            متن توضیحات خرید
+        </h2>
+
+        <p style="line-height:2; margin:20px 0;">
+            متن مورد نظر شما برای توضیح شرایط خرید
+            در این قسمت قرار می‌گیرد.
+        </p>
+
+        <button
+            class="btn buy"
+            onclick="continueToOrder()"
+        >
+            ✓ پذیرش و ادامه
+        </button>
+
+        <button
+            class="btn back"
+            onclick="showPage('detail')"
+            style="margin-top:10px;"
+        >
+            ← بازگشت
+        </button>
+
+    </div>
+
+</section>
 
 <!-- =========================
      ORDER
@@ -1157,9 +1274,15 @@
 
         <div class="form-group">
 
-  
- 
-        
+            <label>
+                نام و نام خانوادگی
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="نام خود را وارد کنید"
+            >
 
         </div>
 
@@ -1167,9 +1290,15 @@
 
         <div class="form-group">
 
-     
+            <label>
+                شماره موبایل
+            </label>
 
-        
+            <input
+                type="tel"
+                id="phone"
+                placeholder="09xxxxxxxxx"
+            >
 
         </div>
 
@@ -1177,17 +1306,16 @@
 
         <div class="form-group">
 
-       
+            <label>
+                پلتفرم آیدی
+            </label>
 
-   
-        </div>
-
-
-        <div class="form-group">
-
-        
-
-    
+            <select id="idPlatform">
+                <option value="">انتخاب پلتفرم</option>
+                <option value="دیسکورد">دیسکورد</option>
+                <option value="روبیکا">روبیکا</option>
+                <option value="تلگرام">تلگرام</option>
+            </select>
 
         </div>
 
@@ -1195,7 +1323,23 @@
         <div class="form-group">
 
             <label>
-                تصویر گیاه
+                آیدی شما
+            </label>
+
+            <input
+                type="text"
+                id="socialId"
+                placeholder="مثلاً @1234"
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+              تصویر رسید
             </label>
 
             <input
@@ -1349,30 +1493,22 @@
 
 
 
-<!-- =========================
-     SUCCESS
-========================= -->
 
 <section id="success" class="page">
 
-
     <div class="success-box">
-
 
         <div class="success-check">
             ✓
         </div>
 
-
         <h1>
             سفارش با موفقیت ثبت شد
         </h1>
 
-
         <p>
-            سفارش شما با موفقیت ثبت گردید.
+            تصویر رسید ممنون ❤
         </p>
-
 
         <button
             class="btn buy"
@@ -1381,17 +1517,9 @@
             بازگشت به پنل
         </button>
 
-
     </div>
 
-
 </section>
-
-
-</main>
-
-</div>
-
 
 
 <!-- =========================
@@ -1428,17 +1556,24 @@ const products = {
 
     vpn10: {
 
-        title: "چمن ها ",
+        title: "VPN 10G تانل شده",
 
-        volume: ".",
+        volume: "10 گیگابایت",
 
         description:
-        ".",
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
 
-        price: "برای ثبت آبیاری کلیک کنید",
+        price: "100 تومان",
 
         features: [
 
+            "حجم 10 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
 
         ]
 
@@ -1447,33 +1582,50 @@ const products = {
 
     vpn20: {
 
-       title: "چمن ها ",
+        title: "VPN 20G تانل شده",
 
-        volume: ".",
+        volume: "20 گیگابایت",
 
         description:
-        ".",
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
 
-        price: "برای ثبت آبیاری کلیک کنید",
+        price: "150 تومان",
 
         features: [
-    ]
+
+            "حجم 20 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
+
+        ]
+
     },
 
 
     vpn30: {
 
-         title: "چمن ها ",
+        title: "VPN 30G تانل شده",
 
-        volume: ".",
+        volume: "30 گیگابایت",
 
         description:
-        ".",
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
 
-        price: "برای ثبت آبیاری کلیک کنید",
+        price: "200 تومان",
 
         features: [
 
+            "حجم 30 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
 
         ]
 
@@ -1482,71 +1634,102 @@ const products = {
 
     vpn40: {
 
-        title: "چمن ها ",
+        title: "VPN 40G تانل شده",
 
-        volume: ".",
+        volume: "40 گیگابایت",
 
         description:
-        ".",
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
 
-        price: "برای ثبت آبیاری کلیک کنید",
+        price: "250 تومان",
 
         features: [
 
+            "حجم 40 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
 
         ]
+
     },
 
 
     vpn50: {
 
-        title: "چمن ها ",
+        title: "VPN 50G تانل شده",
 
-        volume: ".",
+        volume: "50 گیگابایت",
 
         description:
-        ".",
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
 
-        price: "برای ثبت آبیاری کلیک کنید",
+        price: "300 تومان",
 
         features: [
 
+            "حجم 50 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
 
         ]
+
     },
 
 
     vpn80: {
 
-        title: "چمن ها ",
+        title: "VPN 80G تانل شده",
 
-        volume: ".",
+        volume: "80 گیگابایت",
 
         description:
-        ".",
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
 
-        price: "برای ثبت آبیاری کلیک کنید",
+        price: "350 تومان",
 
         features: [
 
+            "حجم 80 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
 
         ]
+
     },
 
 
     vpn100: {
 
-        title: "چمن ها ",
+        title: "VPN 100G تانل شده",
 
-        volume: ".",
+        volume: "100 گیگابایت",
 
         description:
-        ".",
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
 
-        price: "برای ثبت آبیاری کلیک کنید",
+        price: "450 تومان",
 
         features: [
 
+            "حجم 100 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
 
         ]
 
@@ -1555,35 +1738,50 @@ const products = {
 
     vpn150: {
 
-       title: "چمن ها ",
+        title: "VPN 150G تانل شده",
 
-        volume: ".",
+        volume: "150 گیگابایت",
 
         description:
-        ".",
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
 
-        price: "برای ثبت آبیاری کلیک کنید",
+        price: "650 تومان",
 
         features: [
 
+            "حجم 150 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
 
         ]
+
     },
 
 
     vpn200: {
 
-       title: "چمن ها ",
+        title: "VPN 200G تانل شده",
 
-        volume: ".",
+        volume: "200 گیگابایت",
 
         description:
-        ".",
+        "سرویس VPN تانل شده با اتصال سریع و پایدار، مناسب استفاده روزمره.",
 
-        price: "برای ثبت آبیاری کلیک کنید",
+        price: "850 تومان",
 
         features: [
 
+            "حجم 200 گیگابایت",
+
+            "اتصال سریع و پایدار",
+
+            "مناسب استفاده روزمره",
+
+            "فعال‌سازی سریع"
 
         ]
 
@@ -1857,15 +2055,40 @@ function compressImage(file) {
 }
 
 
-javascript
+/* =========================================
+   ثبت سفارش
+========================================= */
+
 async function submitOrder() {
 
-    const button = document.querySelector(
-        '#order button[onclick="submitOrder()"]'
-    );
+    const button = document.querySelector('#order button[onclick="submitOrder()"]');
 
-    const description =
-        document.getElementById("message").value.trim();
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const platform = document.getElementById("idPlatform").value;
+    const socialId = document.getElementById("socialId").value.trim();
+    const description = document.getElementById("message").value.trim();
+    const imageInput = document.getElementById("orderImage");
+
+    if (!name) {
+        alert("لطفاً نام و نام خانوادگی را وارد کنید.");
+        return;
+    }
+
+    if (!phone) {
+        alert("لطفاً شماره موبایل را وارد کنید.");
+        return;
+    }
+
+    if (!platform) {
+        alert("لطفاً پلتفرم آیدی را انتخاب کنید.");
+        return;
+    }
+
+    if (!socialId) {
+        alert("لطفاً آیدی خود را وارد کنید.");
+        return;
+    }
 
     if (!selectedProduct || !selectedProduct.title) {
         alert("لطفاً ابتدا یک محصول انتخاب کنید.");
@@ -1873,10 +2096,9 @@ async function submitOrder() {
     }
 
     const SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbwFFMOxhxFvDuTi0xI6VUZ4K3FLORVf6zosH-_SkZXBU_Z9tBD3IA96rN_mXLKSTV6Tag/exec";
+        "https://script.google.com/macros/s/AKfycbxqdaA0xQaPw9wGRodR41dzvy9RXdQ9mDjwBWj7__BwLgqAHuHVVij6dCKfrwB_LFkl/exec";
 
     const orderId = "CT-" + Date.now();
-
     const time = new Date().toLocaleString("fa-IR");
 
     try {
@@ -1887,181 +2109,77 @@ async function submitOrder() {
             button.innerHTML = "⏳ در حال ارسال...";
         }
 
-        /* =========================
-           دریافت تصویر
-        ========================= */
-
-        const imageInput =
-            document.getElementById("orderImage");
-
         let imageData = null;
 
-        if (
-            imageInput &&
-            imageInput.files &&
-            imageInput.files.length > 0
-        ) {
-
-            imageData =
-                await compressImage(imageInput.files[0]);
-
+        if (imageInput && imageInput.files && imageInput.files[0]) {
+            imageData = await compressImage(imageInput.files[0]);
         }
-
-
-        /* =========================
-           اطلاعات سفارش
-        ========================= */
 
         const orderData = {
-
             orderId: orderId,
-
-            orderType: "آبیاری",
-
+            name: name,
+            phone: phone,
+            username: socialId,
+            platform: platform,
+            orderType: "VPN",
             product: selectedProduct.title,
-
             volume: selectedProduct.volume,
-
             price: selectedProduct.price,
-
             description: description,
-
             time: time,
-
-            imageBase64:
-                imageData
-                    ? imageData.base64
-                    : "",
-
-            imageMimeType:
-                imageData
-                    ? imageData.mimeType
-                    : "",
-
-            imageFilename:
-                imageData
-                    ? imageData.filename
-                    : ""
-
+            imageBase64: imageData ? imageData.base64 : "",
+            imageMimeType: imageData ? imageData.mimeType : "",
+            imageFilename: imageData ? imageData.filename : ""
         };
 
-
-        console.log(
-            "ارسال سفارش:",
-            orderData
-        );
-
-
-        /* =========================
-           ارسال به Google Apps Script
-        ========================= */
-
-        const response = await fetch(
-            SCRIPT_URL,
-            {
-                method: "POST",
-
-                headers: {
-                    "Content-Type":
-                        "text/plain;charset=utf-8"
-                },
-
-                body:
-                    JSON.stringify(orderData)
-            }
-        );
-
+        const response = await fetch(SCRIPT_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(orderData)
+        });
 
         if (!response.ok) {
-
-            throw new Error(
-                "خطای سرور: " +
-                response.status
-            );
-
+            throw new Error("خطای سرور: " + response.status);
         }
 
-
-        const result =
-            await response.json();
-
-
-        console.log(
-            "پاسخ سرور:",
-            result
-        );
-
+        const result = await response.json();
 
         if (!result.success) {
-
-            throw new Error(
-                result.error ||
-                "ارسال سفارش انجام نشد."
-            );
-
+            throw new Error(result.error || "ارسال سفارش انجام نشد.");
         }
 
+        document.getElementById("name").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("idPlatform").value = "";
+        document.getElementById("socialId").value = "";
+        document.getElementById("message").value = "";
+        document.getElementById("orderImage").value = "";
 
-        /* =========================
-           پاک کردن فرم
-        ========================= */
-
-        document.getElementById(
-            "message"
-        ).value = "";
-
-        document.getElementById(
-            "orderImage"
-        ).value = "";
-
-
-        const preview =
-            document.getElementById(
-                "imagePreview"
-            );
-
+        const preview = document.getElementById("imagePreview");
         preview.src = "";
-
-        preview.style.display =
-            "none";
-
-
-        /* =========================
-           صفحه موفقیت
-        ========================= */
+        preview.style.display = "none";
 
         showPage("success");
 
-
     } catch (error) {
 
-        console.error(
-            "ORDER ERROR:",
-            error
-        );
+        console.error("ORDER ERROR:", error);
 
         alert(
             "❌ ارسال سفارش انجام نشد.\n\n" +
-            (error.message ||
-            "خطای نامشخص")
+            (error.message || "خطای نامشخص")
         );
-
 
     } finally {
 
         if (button) {
-
             button.disabled = false;
-
-            button.innerHTML =
-                button.dataset.oldText ||
-                "ثبت سفارش";
-
+            button.innerHTML = button.dataset.oldText || "ثبت سفارش";
         }
-
     }
 }
-
 
 </script>
 

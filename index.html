@@ -1208,13 +1208,15 @@
         >
 
         <!-- متن خودت را اینجا بنویس -->
+        <h1>6219861438455650</h1>
+        <h1>رضا دارینی</h1>
+        <br> <br>
         <h2>
             متن توضیحات خرید
         </h2>
 
         <p style="line-height:2; margin:20px 0;">
-            متن مورد نظر شما برای توضیح شرایط خرید
-            در این قسمت قرار می‌گیرد.
+           لطفا قبل از ورود به مرحله ی بعدی به شماره کارت بالا مبلق مشخص شده روی سرویس انتخابی واریز کرده و عکس رسید را بگیرید و وارد مرحله ی بعدی شوید
         </p>
 
         <button
@@ -2181,6 +2183,46 @@ async function submitOrder() {
     }
 }
 
+/* =========================================
+   باز کردن صفحه توضیحات خرید
+========================================= */
+
+function openOrderIntro() {
+
+    if (!selectedProduct || !selectedProduct.title) {
+
+        alert("لطفاً ابتدا یک محصول انتخاب کنید.");
+
+        return;
+    }
+
+    showPage("orderIntro");
+}
+
+
+/* =========================================
+   ادامه به فرم ثبت سفارش
+========================================= */
+
+function continueToOrder() {
+
+    if (!selectedProduct || !selectedProduct.title) {
+
+        alert("لطفاً ابتدا یک محصول انتخاب کنید.");
+
+        return;
+    }
+
+    const orderProduct =
+        document.getElementById("orderProduct");
+
+    if (orderProduct) {
+        orderProduct.value =
+            selectedProduct.title;
+    }
+
+    showPage("order");
+}
 </script>
 
 
